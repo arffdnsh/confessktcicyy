@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arepp Sayangg Cicyy 💖</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
+    }body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffc0cb, #ffd6e8);
+  overflow: auto;
+}
+
+.container {
+  background: #fff0f6;
+  padding: 40px 30px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(255, 105, 180, 0.3);
+  text-align: center;
+  width: 320px;
+  position: relative;
+  animation: pop 0.8s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+  color: #ff4d88;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 999px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.start-btn { background: #ff69b4; color: white; }
+.start-btn:hover { transform: scale(1.05); background: #ff4d94; }
+
+.question { display: none; margin-top: 20px; }
+.buttons { margin-top: 25px; position: relative; height: 120px; }
+
+.yes-btn { background: #ff4d88; color: white; position: relative; z-index: 2; }
+.yes-btn:hover { background: #ff2f73; transform: scale(1.1); }
+
+.no-btn { background: #ffd1dc; color: #ff4d88; position: absolute; left: 160px; top: 0; }
+
+.heart { position: absolute; color: #ff4d88; font-size: 18px; animation: float 3s linear infinite; opacity: 0.7; }
+@keyframes float { from { transform: translateY(0); opacity: 0.7; } to { transform: translateY(-120px); opacity: 0; } }
+
+.love-image { width: 100%; border-radius: 16px; margin-top: 15px; transition: transform 0.3s ease; }
+.love-image:hover { transform: scale(1.05); margin-bottom: 10px; }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hai Babyyy Bucukk Nenishhh 💕</h1>
+    <button class="start-btn" onclick="showQuestion()">Tekann laaa 😚 ~ </button><div class="question" id="questionBox">
+  <h1>Sayanggg jumm laa kitaa official sayangg 🥺💖</h1>  
+  <img src="https://lh3.googleusercontent.com/pw/AP1GczNd1RyZ3EACqZhV0mHhFiZWkl76KRHSEd6aRhbajElWCvQP0d0zXIfLRXrTCC1ELm6qMU0ak_fpBdjW_7Yh6fTV6bfBJsBCodB-Uyw54rxo7kjHhQidh-1I_suXNyFV8sLHIcy5VX4u8NkSEUsV17hSGw=w1079-h1270-s-no-gm?authuser=0" alt="Love Image" class="love-image" />
+
+  <div class="buttons" id="btnArea">
+    <button class="yes-btn" onclick="yesAnswer()">Nakkk²!!</button>
+    <button class="no-btn" id="noBtn">X MAUU</button>
+  </div>
+</div>
+
+  </div>  <script>
+    const noBtn = document.getElementById("noBtn");
+    const btnArea = document.getElementById("btnArea");
+
+    function showQuestion() {
+      document.querySelector(".start-btn").style.display = "none";
+      document.getElementById("questionBox").style.display = "block";
+      spawnHearts();
+    }
+
+    function yesAnswer() {
+      alert("YEAAYY!! 💖 Kita dahhh official noww!!🥳💍 Sayangggg Cicyy Ketatt ii 👅");
+    }
+
+    noBtn.addEventListener("mousemove", () => {
+      const areaWidth = btnArea.clientWidth;
+      const areaHeight = btnArea.clientHeight;
+      const maxX = areaWidth - noBtn.offsetWidth - 10;
+      const maxY = areaHeight - noBtn.offsetHeight - 10;
+      let randomX;
+      do { randomX = Math.random() * maxX; } while (randomX < 100);
+      const randomY = Math.random() * maxY;
+      noBtn.style.left = randomX + "px";
+      noBtn.style.top = randomY + "px";
+    });
+
+    noBtn.addEventListener("click", () => {
+      alert("haa haaa awatt tkmauu?? tak kiqaaa 😤😠");
+    });
+
+    function spawnHearts() {
+      setInterval(() => {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerText = "💖";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.bottom = "0px";
+        heart.style.fontSize = Math.random() * 10 + 14 + "px";
+        document.body.appendChild(heart);
+        setTimeout(() => { heart.remove(); }, 3000);
+      }, 400);
+    }
+  </script></body>
+</html>
